@@ -71,7 +71,7 @@ var codeMux = &sync.Mutex{}
 // It will override to exist code.
 func Register(coder Coder) {
 	if coder.Code() == 0 {
-		panic("code `0` is reserved by `github.com/marmotedu/errors` as unknownCode error code")
+		panic("code `0` is reserved by `github.com/costa92/errors` as unknownCode error code")
 	}
 
 	codeMux.Lock()
@@ -84,7 +84,7 @@ func Register(coder Coder) {
 // It will panic when the same Code already exist.
 func MustRegister(coder Coder) {
 	if coder.Code() == 0 {
-		panic("code '0' is reserved by 'github.com/marmotedu/errors' as ErrUnknown error code")
+		panic("code '0' is reserved by 'github.com/costa92/errors' as ErrUnknown error code")
 	}
 
 	codeMux.Lock()
